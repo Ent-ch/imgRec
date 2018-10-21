@@ -1,0 +1,408 @@
+{
+    "results": [
+        {
+            "tagging_id": null,
+            "image": "http://poltava.dsns.gov.ua/done_img/gib/128.jpg",
+            "tags": [
+                {
+                    "confidence": 75.2997894287109,
+                    "tag": "forest"
+                },
+                {
+                    "confidence": 73.2001419067383,
+                    "tag": "tree"
+                },
+                {
+                    "confidence": 46.3268661499023,
+                    "tag": "trees"
+                },
+                {
+                    "confidence": 43.1288719177246,
+                    "tag": "autumn"
+                },
+                {
+                    "confidence": 40.4061164855957,
+                    "tag": "park"
+                },
+                {
+                    "confidence": 39.4815635681152,
+                    "tag": "landscape"
+                },
+                {
+                    "confidence": 37.1628036499023,
+                    "tag": "fall"
+                },
+                {
+                    "confidence": 34.4566307067871,
+                    "tag": "woods"
+                },
+                {
+                    "confidence": 28.8825130462646,
+                    "tag": "season"
+                },
+                {
+                    "confidence": 26.1663208007812,
+                    "tag": "outdoors"
+                },
+                {
+                    "confidence": 26.0517673492432,
+                    "tag": "woody plant"
+                },
+                {
+                    "confidence": 25.4212856292725,
+                    "tag": "leaves"
+                },
+                {
+                    "confidence": 23.8088607788086,
+                    "tag": "pine"
+                },
+                {
+                    "confidence": 23.4823112487793,
+                    "tag": "scenery"
+                },
+                {
+                    "confidence": 23.2370891571045,
+                    "tag": "sun"
+                },
+                {
+                    "confidence": 22.8308372497559,
+                    "tag": "branch"
+                },
+                {
+                    "confidence": 22.6032047271729,
+                    "tag": "leaf"
+                },
+                {
+                    "confidence": 21.9750480651855,
+                    "tag": "scenic"
+                },
+                {
+                    "confidence": 21.7155532836914,
+                    "tag": "wood"
+                },
+                {
+                    "confidence": 21.7072944641113,
+                    "tag": "snag"
+                },
+                {
+                    "confidence": 21.6570167541504,
+                    "tag": "pole"
+                },
+                {
+                    "confidence": 21.2489604949951,
+                    "tag": "foliage"
+                },
+                {
+                    "confidence": 21.1770839691162,
+                    "tag": "rural"
+                },
+                {
+                    "confidence": 20.5695037841797,
+                    "tag": "yellow"
+                },
+                {
+                    "confidence": 19.938756942749,
+                    "tag": "scene"
+                },
+                {
+                    "confidence": 19.3912105560303,
+                    "tag": "trunk"
+                },
+                {
+                    "confidence": 18.765941619873,
+                    "tag": "natural"
+                },
+                {
+                    "confidence": 18.3759174346924,
+                    "tag": "outdoor"
+                },
+                {
+                    "confidence": 18.3522968292236,
+                    "tag": "branches"
+                },
+                {
+                    "confidence": 18.3365097045898,
+                    "tag": "peaceful"
+                },
+                {
+                    "confidence": 17.6702060699463,
+                    "tag": "orange"
+                },
+                {
+                    "confidence": 17.5153713226318,
+                    "tag": "rod"
+                },
+                {
+                    "confidence": 17.3733787536621,
+                    "tag": "plant"
+                },
+                {
+                    "confidence": 17.3006706237793,
+                    "tag": "environment"
+                },
+                {
+                    "confidence": 17.287540435791,
+                    "tag": "vascular plant"
+                },
+                {
+                    "confidence": 16.9213409423828,
+                    "tag": "travel"
+                },
+                {
+                    "confidence": 15.8940229415894,
+                    "tag": "colors"
+                },
+                {
+                    "confidence": 15.8147611618042,
+                    "tag": "birch"
+                },
+                {
+                    "confidence": 15.7278823852539,
+                    "tag": "light"
+                },
+                {
+                    "confidence": 15.5455083847046,
+                    "tag": "snow"
+                },
+                {
+                    "confidence": 15.4978713989258,
+                    "tag": "golden"
+                },
+                {
+                    "confidence": 15.3771457672119,
+                    "tag": "road"
+                },
+                {
+                    "confidence": 15.143533706665,
+                    "tag": "path"
+                },
+                {
+                    "confidence": 14.6542730331421,
+                    "tag": "cold"
+                },
+                {
+                    "confidence": 14.4856929779053,
+                    "tag": "winter"
+                },
+                {
+                    "confidence": 14.1342487335205,
+                    "tag": "country"
+                },
+                {
+                    "confidence": 13.7713651657104,
+                    "tag": "woodland"
+                },
+                {
+                    "confidence": 13.586446762085,
+                    "tag": "morning"
+                },
+                {
+                    "confidence": 13.463080406189,
+                    "tag": "grass"
+                },
+                {
+                    "confidence": 13.2366399765015,
+                    "tag": "wilderness"
+                },
+                {
+                    "confidence": 12.9167423248291,
+                    "tag": "colorful"
+                },
+                {
+                    "confidence": 12.8515892028809,
+                    "tag": "sky"
+                },
+                {
+                    "confidence": 12.6152629852295,
+                    "tag": "seasons"
+                },
+                {
+                    "confidence": 12.5075225830078,
+                    "tag": "apparatus"
+                },
+                {
+                    "confidence": 12.4822797775269,
+                    "tag": "sunlight"
+                },
+                {
+                    "confidence": 12.1695890426636,
+                    "tag": "bright"
+                },
+                {
+                    "confidence": 12.1677770614624,
+                    "tag": "new"
+                },
+                {
+                    "confidence": 11.699610710144,
+                    "tag": "sunset"
+                },
+                {
+                    "confidence": 11.5842161178589,
+                    "tag": "river"
+                },
+                {
+                    "confidence": 11.1704788208008,
+                    "tag": "area"
+                },
+                {
+                    "confidence": 10.9811058044434,
+                    "tag": "peace"
+                },
+                {
+                    "confidence": 10.5986614227295,
+                    "tag": "hiking"
+                },
+                {
+                    "confidence": 10.5717601776123,
+                    "tag": "frost"
+                },
+                {
+                    "confidence": 10.5212507247925,
+                    "tag": "seasonal"
+                },
+                {
+                    "confidence": 10.4836406707764,
+                    "tag": "southern beech"
+                },
+                {
+                    "confidence": 10.4681949615479,
+                    "tag": "wild"
+                },
+                {
+                    "confidence": 10.3488597869873,
+                    "tag": "sunny"
+                },
+                {
+                    "confidence": 10.3191404342651,
+                    "tag": "brown"
+                },
+                {
+                    "confidence": 10.0961818695068,
+                    "tag": "ecology"
+                },
+                {
+                    "confidence": 10.0261564254761,
+                    "tag": "color"
+                },
+                {
+                    "confidence": 9.97690773010254,
+                    "tag": "lighting"
+                },
+                {
+                    "confidence": 9.79940319061279,
+                    "tag": "mountain"
+                },
+                {
+                    "confidence": 9.66455268859863,
+                    "tag": "fog"
+                },
+                {
+                    "confidence": 9.37834167480469,
+                    "tag": "structure"
+                },
+                {
+                    "confidence": 9.2233419418335
+                },
+                {
+                    "tag": "vacation"
+                },
+                {
+                    "confidence": 8.86046409606934,
+                    "tag": "footpath"
+                },
+                {
+                    "confidence": 8.76318264007568,
+                    "tag": "snowy"
+                },
+                {
+                    "confidence": 8.72900581359863,
+                    "tag": "trail"
+                },
+                {
+                    "confidence": 8.68160915374756,
+                    "tag": "ground"
+                },
+                {
+                    "confidence": 8.65229988098145,
+                    "tag": "equipment"
+                },
+                {
+                    "confidence": 8.65198612213135,
+                    "tag": "quiet"
+                },
+                {
+                    "confidence": 8.64765167236328,
+                    "tag": "spring"
+                },
+                {
+                    "confidence": 8.53771305084229,
+                    "tag": "walking"
+                },
+                {
+                    "confidence": 8.44689655303955,
+                    "tag": "fire"
+                },
+                {
+                    "confidence": 8.07656288146973,
+                    "tag": "recreation"
+                },
+                {
+                    "confidence": 8.07475662231445,
+                    "tag": "shadow"
+                },
+                {
+                    "confidence": 7.86000871658325,
+                    "tag": "day"
+                },
+                {
+                    "confidence": 7.8428430557251,
+                    "tag": "lane"
+                },
+                {
+                    "confidence": 7.83593130111694,
+                    "tag": "evergreen"
+                },
+                {
+                    "confidence": 7.72935724258423,
+                    "tag": "summer"
+                },
+                {
+                    "confidence": 7.7226881980896,
+                    "tag": "lush"
+                },
+                {
+                    "confidence": 7.57634735107422,
+                    "tag": "stone"
+                },
+                {
+                    "confidence": 7.50991582870483,
+                    "tag": "sunrise"
+                },
+                {
+                    "confidence": 7.44699859619141,
+                    "tag": "stem"
+                },
+                {
+                    "confidence": 7.42664909362793,
+                    "tag": "land"
+                },
+                {
+                    "confidence": 7.35188388824463,
+                    "tag": "water"
+                },
+                {
+                    "confidence": 7.25942897796631,
+                    "tag": "national"
+                },
+                {
+                    "confidence": 7.15393543243408,
+                    "tag": "column"
+                },
+                {
+                    "confidence": 7.04302597045898,
+                    "tag": "growth"
+                }
+            ]
+        }
+    ]
+}

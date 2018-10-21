@@ -1,0 +1,53 @@
+{
+  "name": "imgrec",
+  "version": "1.0.0",
+  "description": "images recognition",
+  "main": "index.js",
+  "dependencies": {
+    "exif": "^0.6.0",
+    "exif-js": "^2.3.0",
+    "express": "^4.16.4",
+    "inferno": "^5.6.1",
+    "inferno-component": "^6.0.3",
+    "inferno-router": "^5.6.1",
+    "mini-css-extract-plugin": "^0.4.4",
+    "multer": "^1.4.1",
+    "osm": "^1.0.0",
+    "surface": "https://github.com/mildrenben/surface.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "7",
+    "babel-plugin-inferno": "^5.1.0",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^1.0.0",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.18.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start-ui": "start /min http-server ./docs -o -s --cors -c-1 && yarn watch",
+    "start": "node index.js",
+    "dev": "start /min yarn watch && nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ent-ch/imgRec.git"
+  },
+  "keywords": [
+    "Inferno"
+  ],
+  "author": "RVM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ent-ch/imgRec/issues"
+  },
+  "homepage": "https://github.com/Ent-ch/imgRec#readme"
+}
