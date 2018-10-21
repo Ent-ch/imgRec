@@ -12,17 +12,22 @@ class App extends Component {
     this.state = {
       sent: false,
       url: null,
+      gps: {
+        lt: 42,
+        ln: 38,
+      },
+      timeFoto: null,
     };
 
     this.handleSend = this.handleSend.bind(this);
   }
 
-  handleSend(url) {
-    this.setState({sent: true, url});
+  handleSend(url, gps, timeFoto) {
+    this.setState({sent: true, url, gps, timeFoto});
   }
 
   render() {
-    const { sent, url } = this.state;
+    const { sent, url, gps, timeFoto } = this.state;
 
     return (
       <div className="g--12 no-margin-vertical appMain">
@@ -32,7 +37,7 @@ class App extends Component {
         </div>
         </div>}
 
-        {sent && <Map imgFire={url} />}
+        {sent && <Map imgFire={url} gps={gps} timeFoto={timeFoto} />}
 
         <footer className="g--12">
           <div className="text-center">

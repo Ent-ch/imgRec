@@ -1,4 +1,5 @@
 import { Component } from 'inferno';
+import { EXIF } from 'exif-js';
 
 class ImageUpload extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class ImageUpload extends Component {
 
     this.handleSelectFile = this.handleSelectFile.bind(this);
     this.handleButton = this.handleButton.bind(this);
+    this.handleSend = this.handleSend.bind(this);
   }
   
   handleButton() {
@@ -19,14 +21,29 @@ class ImageUpload extends Component {
     const reader = new FileReader();
 
     reader.onload = (e) => {
-      this.setState({url: e.target.result});
+      const url = e.target.result;
+    
+      this.setState({url});
     };
     reader.readAsDataURL(this.attachment.files[0]);
   }
 
+  handleSend() {
+    let ln, lt;
+    const self = this;
+
+    EXIF.getData(this.image, function() {
+      const allMetaData = EXIF.getAllTags(this);
+
+      ln = `${allMetaData.GPSLatitude[0]}.${allMetaData.GPSLatitude[1]}`;
+      lt = `${allMetaData.GPSLongitude[0]}.${allMetaData.GPSLongitude[1]}`;
+      
+      self.props.onSend(self.state.url, ({lt, ln}), allMetaData.DateTime);
+    });
+  }
+
   render() {
     const { url } = this.state;
-    const { onSend } = this.props;
     const attachmentEl = <input
       type="file"
       ref={attachment => {this.attachment = attachment;}}
@@ -44,8 +61,8 @@ class ImageUpload extends Component {
 
     return <div>
       {attachmentEl}
-      <img src={url} alt="fire image" className="user-img" />
-      <button class="btn--red btn-send" onClick={() => onSend(url)}>Send</button>
+      <img src={url} alt="fire image" className="user-img" ref={image => {this.image = image;}} />
+      <button class="btn--red btn-send" onClick={this.handleSend}>Send</button>
     </div>
   }
 }

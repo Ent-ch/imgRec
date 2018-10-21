@@ -8,20 +8,20 @@ import './Map.scss';
 class Map extends Component {
 
   render() {
-    const { imgFire } = this.props;
-    const map = osm().position(48.5263832, 32.2718125).radius(0.1);
+    const { imgFire, gps:{ lt, ln }, timeFoto } = this.props;
+    const map = osm().position(parseFloat(ln, 10), parseFloat(lt, 10)).radius(0.1);
     map.show();
     const mapUrl = map.iframe.src.replace('http', 'https');
 
     return <div className="map-block">
       <div className="map">
-        <iframe src={map.iframe.src} />
+        <iframe src={mapUrl} />
       </div>
       <div className="info container">
         <div className="g--3">
           <img src={imgFire} alt="fire image" className="user-img, map-image" />
         </div>
-        <InfoTable />
+        <InfoTable data={({timeFoto})} />
       </div>
     </div>
   }

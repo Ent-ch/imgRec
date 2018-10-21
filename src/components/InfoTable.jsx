@@ -1,15 +1,13 @@
-const InfoTable = props => <table className="g--8 card">
+const InfoTable = ({ data: { timeFoto }}) => <table className="g--8 card">
   <tr className="table-header">
-    <td>Number</td>
-    <td>Name</td>
-    <td>Age</td>
-    <td>Job</td>
+    <td>Time foto</td>
+    <td>Class</td>
+    <td>Nearest firestation</td>
   </tr>
   <tr>
-    <td>521</td>
-    <td>Ben</td>
-    <td>23</td>
-    <td>Front End Dev</td>
+    <td>{timeFoto}</td>
+    <td>Fog, Smoke, Fire</td>
+    <td>12,1 km</td>
   </tr>
 </table>;
 
