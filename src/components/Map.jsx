@@ -11,7 +11,7 @@ class Map extends Component {
     const { imgFire } = this.props;
     const map = osm().position(48.5263832, 32.2718125).radius(0.1);
     map.show();
-    console.log(map.iframe.src);
+    const mapUrl = map.iframe.src.replace('http', 'https');
 
     return <div className="map-block">
       <div className="map">
