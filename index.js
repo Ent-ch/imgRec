@@ -1,8 +1,37 @@
 const express = require('express');
 const multer  = require('multer');
-const upload = multer({ dest: 'uploads/' });
-const exifJs = require('exif-js');
-const ExifImage = require('exif').ExifImage;
+const Jimp = require('jimp');
+const fs = require('fs');
+const request = require('request');
+const path = require('path');
+
+const configDb = require('./knexfile.js') ;
+const knex = require('knex')(configDb.production);
+
+const uploadDir = 'uploads/';
+const publicImgDir = 'docs/img/uploads/';
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, uploadDir)
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({storage: storage, fileFilter: function (req, file, cb) {
+  const filetypes = /jpeg|jpg/;
+  const mimetype = filetypes.test(file.mimetype);
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+
+  if (mimetype && extname) {
+    return cb(null, true);
+  }
+  cb("Error: File upload only supports the following filetypes - " + filetypes);
+}});
+
+const apiKey = '';
+const apiSecret = '';
 
 const app = express();
 app.use(express.static('docs'));
@@ -10,22 +39,59 @@ app.use(express.static('docs'));
 app.post('/upload', upload.single('foto'), function (req, res, next) {
   const currFile = req.file;
   const locFile = `${currFile.destination}${currFile.filename}`;
-  console.log(locFile);
-  // exifJs.readFromBinaryFile(, function() {
-  //   const allMetaData = exifJs.getAllTags(this);
-  //   console.log(allMetaData);
-  // });
-  try {
-    new ExifImage({ image : locFile }, function (error, exifData) {
-        if (error)
-            console.log('Error: '+error.message);
-        else
-            console.log(exifData); // Do something with your data!
-    });
-} catch (error) {
-    console.log('Error: ' + error.message);
-}
+  const formData = {
+    image: fs.createReadStream(locFile),
+  };
 
-})
+  knex('files').insert({name: locFile}).then(newId => {
+    const insertedId = newId[0];
+
+    Jimp.read(locFile, (err, pict) => {
+      if (err) throw err;
+
+      pict.resize(300, Jimp.AUTO) // resize
+        .quality(60) // set JPEG quality
+        .write(`${publicImgDir}img300_${insertedId}.jpg`); // save
+    });
+
+    request.post({url:'https://api.imagga.com/v1/content', formData: formData},
+      (err, response, body) => {
+        if (err) throw err;
+
+        const jBody = JSON.parse(body);
+        // console.log('Status:', response.statusCode);
+
+        const imagaId = jBody.uploaded && jBody.uploaded[0].id;
+        knex('files').where('id', insertedId).update({'imagga_id': imagaId});
+    }).auth(apiKey, apiSecret, true);
+    
+    res.json({insertedId});
+  });
+});
+
+app.get('/image/:id', function (req, res, next) {
+  const id = parseInt(req.params.id, 10);
+  knex('files').where('id', id).then(data => {
+    if (!data.length) {
+      console.log(`not found ${id}`);
+      res.status(404).send();
+    }
+    const imaggaId = data[0].imagga_id;
+
+    knex('tags').where('file_id', id).then(data => {
+      if (!data.length) {
+        request.get('https://api.imagga.com/v1/tagging?content='+imaggaId, function (error, response, body) {
+          console.log('Status:', response.statusCode);
+          // console.log('Headers:', JSON.stringify(response.headers));
+          res.json(JSON.parse(body));
+          knex('tags').insert({ file_id: id, tags: body }).then(newId => {});
+        }).auth(apiKey, apiSecret, true);    
+      }
+
+      res.json(JSON.parse(data[0].tags));
+    });
+  });
+});
+
 
 app.listen(3000);

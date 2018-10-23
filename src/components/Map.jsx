@@ -1,4 +1,4 @@
-import { render, Component } from 'inferno';
+import { Component } from 'inferno';
 import osm from 'osm';
 
 import InfoTable from './InfoTable.jsx';

@@ -10,9 +10,12 @@
     "inferno": "^5.6.1",
     "inferno-component": "^6.0.3",
     "inferno-router": "^5.6.1",
-    "mini-css-extract-plugin": "^0.4.4",
+    "jimp": "^0.5.4",
+    "knex": "^0.15.2",
     "multer": "^1.4.1",
     "osm": "^1.0.0",
+    "request": "^2.88.0",
+    "sqlite3": "^4.0.3",
     "surface": "https://github.com/mildrenben/surface.git"
   },
   "devDependencies": {
@@ -22,6 +25,7 @@
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
     "http-server": "^0.11.1",
+    "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.4",
     "sass-loader": "^7.1.0",
@@ -35,7 +39,8 @@
     "watch": "webpack --mode development --watch",
     "start-ui": "start /min http-server ./docs -o -s --cors -c-1 && yarn watch",
     "start": "node index.js",
-    "dev": "start /min yarn watch && nodemon index.js"
+    "dev": "start /min yarn watch && nodemon index.js",
+    "migrate": "knex migrate:latest --env production"
   },
   "repository": {
     "type": "git",
