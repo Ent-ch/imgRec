@@ -38,7 +38,7 @@
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
     "start-ui": "start /min http-server ./docs -o -s --cors -c-1 && npm run watch",
-    "start": "npm run build && npm run migrate && node index.js",
+    "start": "npm run migrate && node index.js",
     "dev": "start /min npm run watch && nodemon index.js",
     "migrate": "knex migrate:latest --env production"
   },
