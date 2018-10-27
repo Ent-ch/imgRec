@@ -30,7 +30,7 @@ const upload = multer({storage: storage, fileFilter: function (req, file, cb) {
   cb("Error: File upload only supports the following filetypes - " + filetypes);
 }});
 
-const { apiKey, apiSecret, appPort = 3000 } = process.env;
+const { apiKey, apiSecret, PORT = 3000 } = process.env;
 const extApiUrl = 'https://api.imagga.com/v1/';
 
 const app = express();
@@ -89,5 +89,5 @@ app.get('/image/:id', function (req, res, next) {
   });
 });
 
-console.log(`App running on port ${appPort}`)
-app.listen(appPort);
+console.log(`App running on port ${PORT}`)
+app.listen(PORT);
