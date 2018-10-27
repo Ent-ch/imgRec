@@ -1726,7 +1726,8 @@ footer.g--12 {
   position: absolute;
   top: 45%;
   left: 50%;
-  transform: translate(-45%, -50%); }
+  transform: translate(-45%, -50%);
+  width: 130px; }
 
 .btn-big {
   height: 130px;
@@ -1738,4 +1739,17 @@ footer.g--12 {
 .btn-send {
   margin-top: 15px;
   margin-left: 100px; }
+
+.list-img {
+  height: 100px;
+  width: auto; }
+
+.btn-lates {
+  width: 130px;
+  margin-top: 30px; }
+
+.detail-page {
+  height: 100%; }
+  .detail-page footer {
+    position: sticky; }
 

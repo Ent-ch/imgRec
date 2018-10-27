@@ -1,5 +1,6 @@
 import { Component } from 'inferno';
 import { EXIF } from 'exif-js';
+import { Link } from 'inferno-router';
 
 class ImageUpload extends Component {
   constructor(props) {
@@ -80,6 +81,7 @@ class ImageUpload extends Component {
       return <div>
           {attachmentEl}
           <button class="btn--float btn--red btn-big" onClick={this.handleButton}>Shot the fire</button>
+          <Link to="/latest"><button class="btn--red btn-lates">Latest</button></Link>
         </div>;
     }
 

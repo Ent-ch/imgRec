@@ -1,3 +1,5 @@
+$cBlockWidth: 130px;
+
 html, body {
     height: 100%;
 }
@@ -27,12 +29,13 @@ footer.g--12 {
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translate(-45%, -50%);    
+    transform: translate(-45%, -50%);
+    width: $cBlockWidth;
 }
 
 .btn-big {
-    height: 130px;
-    width: 130px
+    height: $cBlockWidth;
+    width: $cBlockWidth;
 }
 
 .user-img {
@@ -42,4 +45,22 @@ footer.g--12 {
 .btn-send {
     margin-top: 15px;
     margin-left: 100px;
+}
+
+.list-img {
+    height: 100px;
+    width: auto;
+}
+
+.btn-lates {
+    width: $cBlockWidth;
+    margin-top: 30px;
+}
+
+.detail-page {
+    height: 100%;
+
+    footer {
+        position: sticky;
+    }
 }

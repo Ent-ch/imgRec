@@ -2,7 +2,7 @@ import { Component } from 'inferno';
 
 class FileUpload extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }

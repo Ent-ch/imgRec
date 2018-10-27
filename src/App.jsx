@@ -1,9 +1,10 @@
 import { render, Component } from 'inferno';
-import { HashRouter, Route, Switch, Redirect } from 'inferno-router';
+import { HashRouter, Route, Redirect, Link } from 'inferno-router';
 
 import ImageUpload from './components/ImageUpload.jsx';
 import Map from './components/Map.jsx';
 import DeatailsPage from './components/DeatailsPage.jsx';
+import ListPage from './components/ListPage.jsx';
 
 import 'surface/src/scss/surface_styles.scss';
 import './App.scss';
@@ -15,8 +16,7 @@ const Home = props => {
 };
 
 const List = props => {
-  console.log(props);
-  return <div>Yopt</div>;
+  return <ListPage />;
 };
 
 const Detail = ({ match: { params: { id }}}) => <DeatailsPage id={id} />;
@@ -56,12 +56,12 @@ class App extends Component {
 
         <Route exact path="/" component={() => <Home handleSend={this.handleSend} />} />
         <Route path="/new" component={() => <Map imgFire={url} gps={gps} timeFoto={timeFoto} />} />
-        <Route path="/list" component={List} />
+        <Route path="/latest" component={List} />
         <Route path="/detail/:id" component={Detail} />
 
         <footer className="g--12">
           <div className="text-center">
-            Help us to prevent fire
+            <Link to="/">Help us to prevent fire</Link>
           </div>
         </footer>
       </div>
