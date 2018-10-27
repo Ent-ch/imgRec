@@ -30,8 +30,8 @@ const upload = multer({storage: storage, fileFilter: function (req, file, cb) {
   cb("Error: File upload only supports the following filetypes - " + filetypes);
 }});
 
-const apiKey = '';
-const apiSecret = '';
+const { apiKey, apiSecret, appPort = 3000 } = process.env;
+const extApiUrl = 'https://api.imagga.com/v1/';
 
 const app = express();
 app.use(express.static('docs'));
@@ -54,13 +54,11 @@ app.post('/upload', upload.single('foto'), function (req, res, next) {
         .write(`${publicImgDir}img300_${insertedId}.jpg`); // save
     });
 
-    request.post({url:'https://api.imagga.com/v1/content', formData: formData},
+    request.post({url:`${extApiUrl}content`, formData: formData},
       (err, response, body) => {
         if (err) throw err;
 
         const jBody = JSON.parse(body);
-        // console.log('Status:', response.statusCode);
-
         const imagaId = jBody.uploaded && jBody.uploaded[0].id;
         knex('files').where('id', insertedId).update({'imagga_id': imagaId});
     }).auth(apiKey, apiSecret, true);
@@ -80,9 +78,7 @@ app.get('/image/:id', function (req, res, next) {
 
     knex('tags').where('file_id', id).then(data => {
       if (!data.length) {
-        request.get('https://api.imagga.com/v1/tagging?content='+imaggaId, function (error, response, body) {
-          console.log('Status:', response.statusCode);
-          // console.log('Headers:', JSON.stringify(response.headers));
+        return request.get(`${extApiUrl}tagging?content=`+imaggaId, function (error, response, body) {
           res.json(JSON.parse(body));
           knex('tags').insert({ file_id: id, tags: body }).then(newId => {});
         }).auth(apiKey, apiSecret, true);    
@@ -93,5 +89,5 @@ app.get('/image/:id', function (req, res, next) {
   });
 });
 
-
-app.listen(3000);
+console.log(`App running on port ${appPort}`)
+app.listen(appPort);

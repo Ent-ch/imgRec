@@ -37,9 +37,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "watch": "webpack --mode development --watch",
-    "start-ui": "start /min http-server ./docs -o -s --cors -c-1 && yarn watch",
-    "start": "node index.js",
-    "dev": "start /min yarn watch && nodemon index.js",
+    "start-ui": "start /min http-server ./docs -o -s --cors -c-1 && npm run watch",
+    "start": "npm run build && npm run migrate && node index.js",
+    "dev": "start /min npm run watch && nodemon index.js",
     "migrate": "knex migrate:latest --env production"
   },
   "repository": {
